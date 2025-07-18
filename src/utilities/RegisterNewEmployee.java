@@ -38,5 +38,6 @@ public class RegisterNewEmployee {
                 RegisteredEmployees.employeeList.add(employee);
             }
         }
+        sc.close();
     }
 }

@@ -1,10 +1,7 @@
 package utilities;
 
-import registeredEmployees.RegisteredEmployees;
-
 import peoples.Employee;
-
-import java.util.List;
+import registeredEmployees.RegisteredEmployees;
 
 public class CheckId {
     public static boolean isValid(int id) {
@@ -19,10 +16,13 @@ public class CheckId {
     }
 
     public static boolean alreadyBusy(int id) {
+        boolean busy = false;
         for (Employee x : RegisteredEmployees.employeeList) {
-            return x.getId() == id ? true : false;
+            if (x.getId() == id) {
+                busy = true;
+            }
         }
 
-        return false;
+        return busy;
     }
 }
